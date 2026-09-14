@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="GUSTTA — Minha conta."
+    >
+
+    <title>GUSTTA — Minha Conta</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- CSS principal da loja -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- CSS específico da conta -->
+    <link rel="stylesheet" href="css/conta.css">
+</head>
+
+
+<body>
+    <header class="header">
+        <div class="container navbar">
+            <a href="homepage.html" class="logo">GUSTTA STORE<span>.</span></a>
+            <nav class="nav-menu">
+                <a href="homepage.html" class="nav-link">Início</a>
+                <a href="produtospage.html" class="nav-link">Produtos</a>
+                <a href="homepage.html#categorias" class="nav-link">Categorias</a>
+                <a href="conta.html" class="nav-link active">Conta</a>
+            </nav>
+            <div class="nav-actions">
+                <a class="icon-button" href="produtospage.html" aria-label="Produtos">
+                    <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                        <circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path>
+                    </svg>
+                </a>
+                <a class="icon-button" href="conta.html " aria-label="Minha conta">
+                    <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                        <circle cx="12" cy="8" r="4"></circle><path d="M4 21c0-4 3.5-7 8-7s8 3 8 7"></path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="account-page">
+        <section class="account-hero">
+            <div class="container">
+                <span class="eyebrow">ÁREA DO CLIENTE</span>
+                <h1>Minha <strong>conta.</strong></h1>
+                <p>Gerencie seus dados, acompanhe pedidos e mantenha seu setup sempre organizado.</p>
+            </div>
+        </section>
+
+        <section class="account-content">
+            <div class="container account-layout">
+                <aside class="account-sidebar">
+                    <div class="account-profile">
+                        <div class="profile-avatar">G</div>
+                        <div><strong>Olá, Gustavo</strong><span>Cliente GUSTTA</span></div>
+                    </div>
+
+                    <nav class="account-menu">
+                        <button class="account-tab active" data-tab="overview">Visão geral</button>
+                        <button class="account-tab" data-tab="orders">Meus pedidos</button>
+                        <button class="account-tab" data-tab="data">Dados pessoais</button>
+                        <button class="account-tab" data-tab="address">Endereços</button>
+                        <button class="account-tab" data-tab="settings">Configurações</button>
+                    </nav>
+
+                    <a class="account-home-link" href="homepage.html">← Voltar para a loja</a>
+                </aside>
+
+                <div class="account-panel">
+                    <section class="account-tab-content active" id="overview">
+                        <div class="account-section-heading">
+                            <span class="eyebrow">RESUMO</span>
+                            <h2>Visão geral</h2>
+                            <p>Confira rapidamente as informações da sua conta.</p>
+                        </div>
+
+                        <div class="account-stats">
+                            <div><span>Pedidos</span><strong>0</strong><small>Compras realizadas</small></div>
+                            <div><span>Favoritos</span><strong>0</strong><small>Produtos salvos</small></div>
+                            <div><span>Cupons</span><strong>0</strong><small>Disponíveis</small></div>
+                        </div>
+
+                        <div class="account-empty-card">
+                            <span class="eyebrow">SEU HISTÓRICO</span>
+                            <h3>Nenhum pedido por aqui ainda.</h3>
+                            <p>Explore nossos produtos e encontre o próximo componente do seu setup.</p>
+                            <a href="produtospage.html" class="button button-primary">Explorar produtos →</a>
+                        </div>
+                    </section>
+
+                    <section class="account-tab-content" id="orders">
+                        <div class="account-section-heading"><span class="eyebrow">HISTÓRICO</span><h2>Meus pedidos</h2><p>Acompanhe suas compras e pedidos recentes.</p></div>
+                        <div class="account-empty-card compact"><h3>Você ainda não fez nenhum pedido.</h3><p>Quando realizar uma compra, o acompanhamento aparecerá nesta área.</p><a href="produtospage.html" class="text-link">Ver produtos <span>→</span></a></div>
+                    </section>
+
+                    <section class="account-tab-content" id="data">
+                        <div class="account-section-heading"><span class="eyebrow">PERFIL</span><h2>Dados pessoais</h2><p>Atualize as informações utilizadas na sua conta.</p></div>
+                        <form class="account-form" id="accountForm">
+                            <label>Nome completo<input type="text" name="name" value="Gustavo" required></label>
+                            <label>E-mail<input type="email" name="email" placeholder="seuemail@exemplo.com" required></label>
+                            <label>Telefone<input type="tel" name="phone" placeholder="(00) 00000-0000"></label>
+                            <button class="button button-primary" type="submit">Salvar alterações</button>
+                        </form>
+                    </section>
+
+                    <section class="account-tab-content" id="address">
+                        <div class="account-section-heading"><span class="eyebrow">ENTREGA</span><h2>Endereços</h2><p>Cadastre o endereço utilizado para suas entregas.</p></div>
+                        <div class="address-card"><span>ENDEREÇO PRINCIPAL</span><strong>Nenhum endereço cadastrado</strong><p>Adicione um endereço para agilizar suas próximas compras.</p><button class="button button-secondary" type="button" id="addAddress">Adicionar endereço</button></div>
+                    </section>
+
+                    <section class="account-tab-content" id="settings">
+                        <div class="account-section-heading"><span class="eyebrow">PREFERÊNCIAS</span><h2>Configurações</h2><p>Controle as preferências da sua experiência na GUSTTA.</p></div>
+                        <div class="settings-list">
+                            <label><span><strong>Receber novidades</strong><small>Novos produtos, lançamentos e ofertas.</small></span><input type="checkbox" checked></label>
+                            <label><span><strong>Ofertas personalizadas</strong><small>Receba ofertas relacionadas ao seu setup.</small></span><input type="checkbox"></label>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom"><span>© 2026 GUSTTA. Todos os direitos reservados.</span><span>Feito para quem exige mais.</span></div>
+        </div>
+    </footer>
+
+    <script src="js/conta.js"></script>
+</body>
+</html>

@@ -1,18 +1,166 @@
 <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="GUSTTA — Produtos high-end para seu setup.">
+    <title>GUSTTA — Produtos</title>
 
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="/gustaStore/css/produtos.css">
-    </head>
-    <body>
-        
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/produtos.css">
+</head>
 
-        <script src="/gustaStore/js/produtos.js" async defer></script>
-    </body>
+<body>
+    <header class="header">
+        <div class="container navbar">
+            <a href="homepage.html" class="logo">GUSTTA STORE<span>.</span></a>
+
+            <nav class="nav-menu">
+                <a href="homepage.html" class="nav-link">Início</a>
+                <a href="produtospage.html" class="nav-link active">Produtos</a>
+                <a href="homepage.html#categorias" class="nav-link">Categorias</a>
+                <a href="conta.html" class="nav-link">Conta</a>
+            </nav>
+
+            <div class="nav-actions">
+                <button class="icon-button" id="searchButton" aria-label="Pesquisar">
+                    <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                        <circle cx="11" cy="11" r="7"></circle>
+                        <path d="m20 20-3.5-3.5"></path>
+                    </svg>
+                </button>
+
+                <a class="icon-button desktop-only" href="conta.html" aria-label="Minha conta">
+                    <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                        <circle cx="12" cy="8" r="4"></circle>
+                        <path d="M4 21c0-4 3.5-7 8-7s8 3 8 7"></path>
+                    </svg>
+                </a>
+
+                <button class="cart-button" id="cartButton" aria-label="Carrinho">
+                    <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                        <path d="M3 4h2l2.2 11.2a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 2-1.6L21 7H6"></path>
+                        <circle cx="10" cy="20" r="1"></circle>
+                        <circle cx="18" cy="20" r="1"></circle>
+                    </svg>
+                    <span class="cart-count">0</span>
+                </button>
+
+                <button class="mobile-menu-button" aria-label="Menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="search-overlay" id="searchOverlay">
+        <div class="search-box">
+            <button class="search-close" id="searchClose">×</button>
+            <span class="search-label">O que você está procurando?</span>
+            <div class="search-input-wrapper">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <circle cx="11" cy="11" r="7"></circle>
+                    <path d="m20 20-3.5-3.5"></path>
+                </svg>
+                <input type="text" id="searchInput" placeholder="Buscar produtos...">
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <section class="products-hero">
+            <div class="container products-hero-grid">
+                <div>
+                    <span class="eyebrow">COLEÇÃO GUSTTA</span>
+                    <h1>Produtos<br><strong>sem limites.</strong></h1>
+                    <p>Explore periféricos desenvolvidos para entregar precisão, velocidade, conforto e performance no seu setup.</p>
+                </div>
+                <div class="products-hero-mark">
+                    <span>GUSTTA</span>
+                    <strong>HIGH<br>PERFORMANCE</strong>
+                    <small>01 / COLLECTION</small>
+                </div>
+            </div>
+        </section>
+
+        <section class="products-page-section">
+            <div class="container">
+                <div class="product-toolbar">
+                    <div>
+                        <span class="eyebrow">ENCONTRE SEU SETUP</span>
+                        <h2>Todos os produtos</h2>
+                    </div>
+
+                    <div class="category-filters" role="group" aria-label="Filtrar produtos">
+                        <button class="filter-button active" data-filter="Todos">Todos</button>
+                        <button class="filter-button" data-filter="Teclado">Teclados</button>
+                        <button class="filter-button" data-filter="Mouse">Mouses</button>
+                        <button class="filter-button" data-filter="Headset">Headsets</button>
+                        <button class="filter-button" data-filter="Mousepad">Mousepads</button>
+                    </div>
+                </div>
+
+                <div class="products-grid products-page-grid" id="productsGrid"></div>
+            </div>
+        </section>
+
+        <section class="products-benefit-strip">
+            <div class="container products-benefit-grid">
+                <div><strong>01</strong><span>Produtos selecionados</span><small>Hardware de alto nível</small></div>
+                <div><strong>02</strong><span>Compra segura</span><small>Pagamento protegido</small></div>
+                <div><strong>03</strong><span>Envio rápido</span><small>Acompanhe seu pedido</small></div>
+                <div><strong>04</strong><span>Garantia</span><small>Suporte após a compra</small></div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="homepage.html" class="logo">GUSTTA<span>.</span></a>
+                    <p>Periféricos high-end para quem não aceita menos que o melhor.</p>
+                    <div class="social-links"><a href="#">IG</a><a href="#">YT</a><a href="#">DC</a></div>
+                </div>
+                <div class="footer-column">
+                    <h4>Loja</h4>
+                    <a href="produtospage.html">Produtos</a>
+                    <a href="homepage.html#categorias">Categorias</a>
+                    <a href="#">Ofertas</a>
+                    <a href="#">Lançamentos</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Suporte</h4>
+                    <a href="#">Central de ajuda</a><a href="#">Entrega</a><a href="#">Trocas e devoluções</a><a href="#">Garantia</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Institucional</h4>
+                    <a href="homepage.html#sobre">Sobre nós</a><a href="#">Contato</a><a href="#">Privacidade</a><a href="#">Termos de uso</a>
+                </div>
+            </div>
+            <div class="footer-bottom"><span>© 2026 GUSTTA. Todos os direitos reservados.</span><span>Feito para quem exige mais.</span></div>
+        </div>
+    </footer>
+
+    <aside class="cart-drawer" id="cartDrawer">
+        <div class="cart-header">
+            <div><span class="eyebrow">SUA COMPRA</span><h3>Carrinho</h3></div>
+            <button id="cartClose" class="cart-close">×</button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <div class="empty-cart"><div class="empty-cart-icon">🛒</div><h4>Seu carrinho está vazio</h4><p>Adicione alguns produtos para começar.</p></div>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total"><span>Total</span><strong id="cartTotal">R$ 0,00</strong></div>
+            <button class="checkout-button">Finalizar compra</button>
+        </div>
+    </aside>
+    <div class="cart-overlay" id="cartOverlay"></div>
+
+    <script src="js/produtos.js"></script>
+</body>
 </html>
