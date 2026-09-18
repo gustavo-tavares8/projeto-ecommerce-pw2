@@ -1,0 +1,1426 @@
+body {
+    background-color: #F5F5F6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+/* Card */
+.container {
+    background-color: #FDFDFD;
+    width: 100%;
+    max-width: 420px;
+    border-radius: 18px;
+    padding: 40px 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    text-align: center;
+}
+
+/* Logo no topo */
+.imgBuy {
+    margin-bottom: 20px;
+}
+
+.imgBuy img {
+    max-width: 200px;
+}
+
+/* Bloco de texto e formulário */
+.informacoes {
+    text-align: left;
+}
+
+h1 {
+    color: #1a1a1a;
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+/* Texto abaixo do título (só o primeiro parágrafo, não o "Já tem conta?") */
+.informacoes > p:first-of-type {
+    color: #777;
+    font-size: 14px;
+    margin-bottom: 25px;
+    line-height: 1.4;
+}
+
+/* Texto "Já tem conta? / Não tem uma conta?" no fim do card */
+.login-text {
+    text-align: center;
+    color: #777;
+    font-size: 14px;
+    margin-top: 20px;
+}
+
+.login-text a {
+    color: #FD5800;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.login-text a:hover {
+    text-decoration: underline;
+}
+
+/* Inputs */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="password"] {
+    width: 100%;
+    padding: 13px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+    font-size: 14px;
+    color: #000;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    transition: border-color 0.2s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="number"]:focus,
+input[type="password"]:focus {
+    outline: none;
+    border-color: #FD5800;
+}
+
+input::placeholder {
+    color: #999;
+}
+
+/* Label com checkbox (ex: "Lembrar de mim" ou "Eu concordo com os Termos...") */
+form label:has(input[type="checkbox"]) {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    font-size: 14px;
+    color: #555;
+    line-height: 1.4;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+form label input[type="checkbox"] {
+    cursor: pointer;
+    margin-top: 3px;
+    flex-shrink: 0;
+}
+
+/* Botão */
+.btn-um {
+    display: block;
+    width: 100%;
+    padding: 13px;
+    background-color: #FD5800;
+    color: white;
+    text-align: center;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 25px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-um:hover {
+    background-color: #cf5311;
+}
+
+/* Divisor "ou continue com" */
+.divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #999;
+    font-size: 13px;
+    margin: 20px 0;
+}
+
+.divider::before,
+.divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background-color: #e0e0e0;
+}
+
+.divider::before {
+    margin-right: 12px;
+}
+
+.divider::after {
+    margin-left: 12px;
+}
+
+/* Ícones de login social */
+.icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    font-size: 28px;
+}
+
+.icons a {
+    transition: transform 0.3s, filter 0.3s;
+    display: inline-block;
+}
+
+.icons a:hover {
+    transform: scale(1.15);
+    filter: brightness(1.2);
+}
+
+/* Responsivo */
+@media (max-width: 500px) {
+    .container {
+        padding: 30px 20px;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+}
+/* =========================================================
+   CADASTRO DE USUÁRIO
+   ========================================================= */
+
+.cadastro-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px;
+
+    background:
+        radial-gradient(
+            circle at 50% 20%,
+            rgba(199, 255, 61, 0.08),
+            transparent 35%
+        ),
+        var(--bg);
+}
+
+.cadastro-container {
+    width: 100%;
+    max-width: 500px;
+}
+
+.cadastro-box {
+    background: var(--bg-card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 40px;
+
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+}
+
+.cadastro-header {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.cadastro-header h1 {
+    font-size: 32px;
+    margin-bottom: 8px;
+    letter-spacing: -1px;
+}
+
+.cadastro-header h1 span {
+    color: var(--accent);
+}
+
+.cadastro-header p {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.cadastro-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.cadastro-field {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.cadastro-field label {
+    color: var(--text);
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.cadastro-field input {
+    width: 100%;
+    height: 50px;
+
+    padding: 0 15px;
+
+    color: var(--white);
+    background: var(--bg);
+
+    border: 1px solid var(--line);
+    border-radius: 8px;
+
+    outline: none;
+
+    font-size: 14px;
+
+    transition:
+        border-color var(--transition),
+        box-shadow var(--transition);
+}
+
+.cadastro-field input:focus {
+    border-color: var(--accent);
+
+    box-shadow: 0 0 0 3px rgba(199, 255, 61, 0.08);
+}
+
+.cadastro-field input::placeholder {
+    color: var(--muted-dark);
+}
+
+.cadastro-termos {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+
+    margin-top: 4px;
+
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.cadastro-termos input {
+    margin-top: 3px;
+    accent-color: var(--accent);
+}
+
+.cadastro-termos a {
+    color: var(--accent);
+}
+
+.cadastro-termos a:hover {
+    text-decoration: underline;
+}
+
+.cadastro-button {
+    width: 100%;
+    height: 50px;
+
+    margin-top: 8px;
+
+    border: none;
+    border-radius: 8px;
+
+    color: #0b0d0f;
+    background: var(--accent);
+
+    font-size: 14px;
+    font-weight: 800;
+
+    cursor: pointer;
+
+    transition:
+        background var(--transition),
+        transform var(--transition);
+}
+
+.cadastro-button:hover {
+    background: var(--accent-hover);
+    transform: translateY(-2px);
+}
+
+.cadastro-login {
+    text-align: center;
+
+    margin-top: 24px;
+
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.cadastro-login a {
+    color: var(--accent);
+    font-weight: 700;
+}
+
+.cadastro-login a:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================================================
+   RESPONSIVIDADE DO CADASTRO
+   ========================================================= */
+
+@media (max-width: 560px) {
+
+    .cadastro-page {
+        padding: 30px 15px;
+    }
+
+    .cadastro-box {
+        padding: 28px 22px;
+    }
+
+    .cadastro-header h1 {
+        font-size: 27px;
+    }
+}
+/* =========================================================
+   GUSTTA STORE
+   TEMA ESCURO - CADASTRO / PRODUTOS / CATÁLOGO
+   ========================================================= */
+
+
+/* ---------- VARIÁVEIS ---------- */
+
+:root {
+
+    --bg: #080808;
+
+    --bg-card: #111111;
+
+    --bg-input: #181818;
+
+    --line: #363636;
+
+    --accent: #b6ff00;
+
+    --accent-hover: #c8ff3d;
+
+    --text: #f5f5f5;
+
+    --muted: #a5a5a5;
+
+    --white: #ffffff;
+
+}
+
+
+/* =========================================================
+   CADASTRO DE USUÁRIO
+   ========================================================= */
+
+body.cadastro-page {
+
+    margin: 0;
+
+    min-height: 100vh;
+
+    padding: 30px 20px;
+
+    box-sizing: border-box;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background:
+        radial-gradient(
+            circle at top,
+            rgba(182, 255, 0, 0.09),
+            transparent 38%
+        ),
+        var(--bg);
+
+    color: var(--text);
+
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+
+.cadastro-container {
+
+    width: 100%;
+
+    max-width: 480px;
+
+}
+
+
+.cadastro-box {
+
+    width: 100%;
+
+    padding: 40px;
+
+    box-sizing: border-box;
+
+    background: var(--bg-card);
+
+    border: 1px solid var(--line);
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.45);
+
+}
+
+
+.cadastro-header {
+
+    text-align: center;
+
+    margin-bottom: 30px;
+
+}
+
+
+.cadastro-header h1 {
+
+    margin: 0 0 10px;
+
+    color: var(--accent);
+
+    font-size: 31px;
+
+    font-weight: 800;
+
+}
+
+
+.cadastro-header p {
+
+    margin: 0;
+
+    color: var(--muted);
+
+    font-size: 14px;
+
+}
+
+
+.cadastro-form {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 18px;
+
+}
+
+
+.cadastro-field {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+
+}
+
+
+.cadastro-field label {
+
+    color: var(--text);
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+}
+
+
+.cadastro-field input {
+
+    width: 100%;
+
+    height: 50px;
+
+    padding: 0 15px;
+
+    box-sizing: border-box;
+
+    background: var(--bg-input);
+
+    color: var(--white);
+
+    border: 1px solid var(--line);
+
+    border-radius: 9px;
+
+    outline: none;
+
+    font-size: 14px;
+
+    transition: 0.25s ease;
+
+}
+
+
+.cadastro-field input::placeholder {
+
+    color: #707070;
+
+}
+
+
+.cadastro-field input:focus {
+
+    border-color: var(--accent);
+
+    box-shadow:
+        0 0 0 3px rgba(182, 255, 0, 0.08);
+
+}
+
+
+.cadastro-termos {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 9px;
+
+    color: var(--muted);
+
+    font-size: 13px;
+
+    line-height: 1.4;
+
+    cursor: pointer;
+
+}
+
+
+.cadastro-termos input {
+
+    margin-top: 2px;
+
+    accent-color: var(--accent);
+
+}
+
+
+.cadastro-button {
+
+    width: 100%;
+
+    height: 50px;
+
+    margin-top: 4px;
+
+    border: none;
+
+    border-radius: 9px;
+
+    background: var(--accent);
+
+    color: #050505;
+
+    font-size: 15px;
+
+    font-weight: 800;
+
+    cursor: pointer;
+
+    transition: 0.25s ease;
+
+}
+
+
+.cadastro-button:hover {
+
+    background: var(--accent-hover);
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 25px rgba(182, 255, 0, 0.15);
+
+}
+
+
+.cadastro-login {
+
+    margin-top: 24px;
+
+    text-align: center;
+
+}
+
+
+.cadastro-login a {
+
+    color: var(--accent);
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    text-decoration: none;
+
+}
+
+
+.cadastro-login a:hover {
+
+    text-decoration: underline;
+
+}
+
+
+/* =========================================================
+   CADASTRO DE PRODUTO
+   ========================================================= */
+
+body.produto-cadastro-page {
+
+    margin: 0;
+
+    min-height: 100vh;
+
+    padding: 40px 20px;
+
+    box-sizing: border-box;
+
+    background:
+        radial-gradient(
+            circle at top,
+            rgba(182, 255, 0, 0.08),
+            transparent 38%
+        ),
+        var(--bg);
+
+    color: var(--text);
+
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+
+.produto-cadastro-container {
+
+    width: 100%;
+
+    max-width: 650px;
+
+    margin: 0 auto;
+
+}
+
+
+.produto-cadastro-box {
+
+    padding: 38px;
+
+    background: var(--bg-card);
+
+    border: 1px solid var(--line);
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.45);
+
+}
+
+
+.produto-cadastro-header {
+
+    text-align: center;
+
+    margin-bottom: 30px;
+
+}
+
+
+.produto-cadastro-header h1 {
+
+    margin: 0 0 8px;
+
+    color: var(--accent);
+
+    font-size: 30px;
+
+}
+
+
+.produto-cadastro-header p {
+
+    margin: 0;
+
+    color: var(--muted);
+
+    font-size: 14px;
+
+}
+
+
+.produto-cadastro-form {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 18px;
+
+}
+
+
+.produto-field {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+
+}
+
+
+.produto-field label {
+
+    color: var(--text);
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+}
+
+
+.produto-field input[type="text"],
+.produto-field input[type="number"],
+.produto-field textarea {
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 13px 15px;
+
+    background: var(--bg-input);
+
+    color: var(--white);
+
+    border: 1px solid var(--line);
+
+    border-radius: 9px;
+
+    outline: none;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 14px;
+
+    transition: 0.25s ease;
+
+}
+
+
+.produto-field input[type="text"],
+.produto-field input[type="number"] {
+
+    height: 50px;
+
+}
+
+
+.produto-field textarea {
+
+    min-height: 120px;
+
+    resize: vertical;
+
+}
+
+
+.produto-field input::placeholder,
+.produto-field textarea::placeholder {
+
+    color: #707070;
+
+}
+
+
+.produto-field input:focus,
+.produto-field textarea:focus {
+
+    border-color: var(--accent);
+
+    box-shadow:
+        0 0 0 3px rgba(182, 255, 0, 0.08);
+
+}
+
+
+.produto-field input[type="file"] {
+
+    padding: 10px;
+
+    box-sizing: border-box;
+
+    color: var(--muted);
+
+    background: var(--bg-input);
+
+    border: 1px solid var(--line);
+
+    border-radius: 9px;
+
+    cursor: pointer;
+
+}
+
+
+.produto-field input[type="file"]::file-selector-button {
+
+    margin-right: 12px;
+
+    padding: 9px 13px;
+
+    border: none;
+
+    border-radius: 7px;
+
+    background: var(--accent);
+
+    color: #000;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+}
+
+
+.produto-field small {
+
+    color: #777;
+
+    font-size: 12px;
+
+}
+
+
+.produto-cadastro-button {
+
+    width: 100%;
+
+    height: 50px;
+
+    margin-top: 5px;
+
+    border: none;
+
+    border-radius: 9px;
+
+    background: var(--accent);
+
+    color: #050505;
+
+    font-size: 15px;
+
+    font-weight: 800;
+
+    cursor: pointer;
+
+    transition: 0.25s ease;
+
+}
+
+
+.produto-cadastro-button:hover {
+
+    background: var(--accent-hover);
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 25px rgba(182, 255, 0, 0.15);
+
+}
+
+
+.produto-cadastro-links {
+
+    margin-top: 22px;
+
+    text-align: center;
+
+}
+
+
+.produto-cadastro-links a {
+
+    color: var(--accent);
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    text-decoration: none;
+
+}
+
+
+.produto-cadastro-links a:hover {
+
+    text-decoration: underline;
+
+}
+
+
+/* ---------- MENSAGENS ---------- */
+
+.msg {
+
+    padding: 13px 15px;
+
+    margin-bottom: 20px;
+
+    border-radius: 9px;
+
+    background: #241717;
+
+    border: 1px solid #522626;
+
+    color: #ffb0b0;
+
+    font-size: 14px;
+
+}
+
+
+.msg.ok {
+
+    background: #17220b;
+
+    border-color: #405d16;
+
+    color: var(--accent);
+
+}
+
+
+/* =========================================================
+   CATÁLOGO
+   ========================================================= */
+
+body.catalogo-page {
+
+    margin: 0;
+
+    min-height: 100vh;
+
+    padding: 0 20px 50px;
+
+    box-sizing: border-box;
+
+    background:
+        radial-gradient(
+            circle at top,
+            rgba(182, 255, 0, 0.06),
+            transparent 35%
+        ),
+        var(--bg);
+
+    color: var(--text);
+
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+
+.catalogo-header {
+
+    width: 100%;
+
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    padding: 35px 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 25px;
+
+    box-sizing: border-box;
+
+    border-bottom: 1px solid var(--line);
+
+}
+
+
+.catalogo-logo {
+
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: var(--accent);
+
+    font-size: 13px;
+
+    font-weight: 900;
+
+    letter-spacing: 4px;
+
+}
+
+
+.catalogo-header h1 {
+
+    margin: 0 0 7px;
+
+    color: var(--white);
+
+    font-size: 34px;
+
+}
+
+
+.catalogo-header p {
+
+    margin: 0;
+
+    color: var(--muted);
+
+    font-size: 14px;
+
+}
+
+
+.catalogo-button {
+
+    padding: 12px 18px;
+
+    background: var(--accent);
+
+    color: #000;
+
+    border-radius: 9px;
+
+    font-size: 14px;
+
+    font-weight: 800;
+
+    text-decoration: none;
+
+    white-space: nowrap;
+
+    transition: 0.25s ease;
+
+}
+
+
+.catalogo-button:hover {
+
+    background: var(--accent-hover);
+
+    transform: translateY(-2px);
+
+}
+
+
+.catalogo-container {
+
+    width: 100%;
+
+    max-width: 1200px;
+
+    margin: 35px auto 0;
+
+}
+
+
+.catalogo-produtos {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(230px, 1fr)
+        );
+
+    gap: 24px;
+
+}
+
+
+.produto {
+
+    overflow: hidden;
+
+    background: var(--bg-card);
+
+    border: 1px solid var(--line);
+
+    border-radius: 14px;
+
+    transition: 0.25s ease;
+
+}
+
+
+.produto:hover {
+
+    border-color: var(--accent);
+
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.35);
+
+}
+
+
+.produto-imagem {
+
+    width: 100%;
+
+    height: 240px;
+
+    overflow: hidden;
+
+    background: #181818;
+
+}
+
+
+.produto-imagem img {
+
+    display: block;
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: 0.3s ease;
+
+}
+
+
+.produto:hover .produto-imagem img {
+
+    transform: scale(1.04);
+
+}
+
+
+.sem-foto {
+
+    width: 100%;
+
+    height: 240px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #181818;
+
+    color: #666;
+
+    font-size: 14px;
+
+}
+
+
+.produto-info {
+
+    padding: 20px;
+
+}
+
+
+.produto-info h2 {
+
+    margin: 0 0 10px;
+
+    color: var(--white);
+
+    font-size: 19px;
+
+}
+
+
+.descricao {
+
+    min-height: 45px;
+
+    margin: 0;
+
+    color: var(--muted);
+
+    font-size: 14px;
+
+    line-height: 1.5;
+
+}
+
+
+.produto-footer {
+
+    margin-top: 18px;
+
+    padding-top: 15px;
+
+    border-top: 1px solid var(--line);
+
+}
+
+
+.preco {
+
+    color: var(--accent);
+
+    font-size: 21px;
+
+    font-weight: 800;
+
+}
+
+
+.catalogo-mensagem {
+
+    padding: 25px;
+
+    text-align: center;
+
+    background: var(--bg-card);
+
+    border: 1px solid var(--line);
+
+    border-radius: 12px;
+
+    color: var(--muted);
+
+}
+
+
+.catalogo-mensagem.erro {
+
+    color: #ff9999;
+
+    border-color: #572929;
+
+}
+
+
+/* =========================================================
+   CELULAR
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    body.cadastro-page {
+
+        padding: 20px 12px;
+
+    }
+
+
+    .cadastro-box {
+
+        padding: 28px 20px;
+
+    }
+
+
+    .cadastro-header h1 {
+
+        font-size: 27px;
+
+    }
+
+
+    body.produto-cadastro-page {
+
+        padding: 20px 12px;
+
+    }
+
+
+    .produto-cadastro-box {
+
+        padding: 28px 20px;
+
+    }
+
+
+    .produto-cadastro-header h1 {
+
+        font-size: 26px;
+
+    }
+
+
+    body.catalogo-page {
+
+        padding: 0 12px 35px;
+
+    }
+
+
+    .catalogo-header {
+
+        padding: 28px 0;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        text-align: center;
+
+    }
+
+
+    .catalogo-header h1 {
+
+        font-size: 28px;
+
+    }
+
+
+    .catalogo-button {
+
+        text-align: center;
+
+    }
+
+
+    .catalogo-produtos {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}
